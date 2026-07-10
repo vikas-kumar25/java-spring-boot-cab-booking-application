@@ -1,5 +1,7 @@
 package com.example.tripEase.controller;
 
+import com.example.tripEase.dtos.request.CustomerRequest;
+import com.example.tripEase.dtos.response.CustomerResponse;
 import com.example.tripEase.model.Customer;
 import com.example.tripEase.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +20,12 @@ public class CustomerController {
     private CustomerService customerService;
 
     @PostMapping("/add")
-    public Customer addCustomer(@RequestBody Customer customer) {
-        return customerService.addCustomer(customer);
+    public CustomerResponse addCustomer(@RequestBody CustomerRequest customerRequest) {
+        return customerService.addCustomer(customerRequest);
     }
 
     @GetMapping("/get-customer/{id}")
-    public Customer getCustomer(@PathVariable Long id) {
+    public CustomerResponse getCustomer(@PathVariable Long id) {
         return customerService.getStudent(id);
     }
 }
