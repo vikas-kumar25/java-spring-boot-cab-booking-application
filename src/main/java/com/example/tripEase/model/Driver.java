@@ -21,24 +21,19 @@ import java.util.List;
 
 @Entity
 @Table(name = "driver_information")
-public class Driver {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int driverId;
-
-    private String name;
-
-    private int age;
-
-    @Column(name = "email_id")
-    private String email;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "driver_id")
-    private List<Booking> bookings = new ArrayList<>();
-
+public class Driver
+{
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cab_id")
     Cab cab;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int driverId;
+    private String name;
+    private int age;
+    @Column(name = "email_id")
+    private String email;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "driver_id")
+    private List<Booking> bookings = new ArrayList<>();
 }

@@ -18,8 +18,8 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "cab_information")
-public class Cab {
-
+public class Cab
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cabId;

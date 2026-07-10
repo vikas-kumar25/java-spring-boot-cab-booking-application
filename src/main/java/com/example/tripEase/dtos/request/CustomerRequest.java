@@ -12,8 +12,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CustomerRequest {
-
+public class CustomerRequest
+{
     private String name;
 
     private int age;

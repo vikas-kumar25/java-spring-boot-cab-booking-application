@@ -5,9 +5,10 @@ package com.example.tripEase.exception;
  Created on: 06-07-2026 19:53
  Project Name: tripEase ${
  /**********************************************/
-public class CustomerNotfoundException extends RuntimeException{
-
-    public CustomerNotfoundException(String message) {
+public class CustomerNotFoundException extends RuntimeException
+{
+    public CustomerNotFoundException(String message)
+    {
         super(message);
     }
 }

@@ -13,8 +13,8 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class CustomerResponse {
-
+public class CustomerResponse
+{
     private Long customerId;
 
     private String name;
@@ -24,5 +24,4 @@ public class CustomerResponse {
     private String email;
 
     private Gender gender;
-
 }

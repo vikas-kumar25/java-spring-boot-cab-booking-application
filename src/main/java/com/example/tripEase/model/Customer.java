@@ -19,7 +19,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "customer_information")
-public class Customer {
+public class Customer
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,6 +38,6 @@ public class Customer {
 
     //uni-Directional Relationship
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn (name = "customer_id")  //Creating Fk & Joining table
+    @JoinColumn(name = "customer_id")  //Creating Fk & Joining table
     private List<Booking> bookings = new ArrayList<>();
 }

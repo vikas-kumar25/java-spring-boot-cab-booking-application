@@ -23,26 +23,22 @@ import java.util.Date;
 
 @Entity
 @Table(name = "booking_information")
-public class Booking {
+public class Booking
+{
+    @CreationTimestamp
+    Date bookedAt;
+
+    @UpdateTimestamp
+    Date lastUpdateAt;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 
     private String pickup;
-
     private String destination;
-
     private int tripDistanceInKm;
-
     private TripStatus tripStatus;
-
     private Double billAmount;
-
-    @CreationTimestamp
-    Date bookedAt;
-
-    @UpdateTimestamp
-    Date lastUpdateAt;
 
 }

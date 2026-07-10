@@ -14,18 +14,20 @@ import org.springframework.web.bind.annotation.*;
  /**********************************************/
 @RestController
 @RequestMapping("/customers")
-public class CustomerController {
-
+public class CustomerController
+{
     @Autowired
     private CustomerService customerService;
 
     @PostMapping("/add")
-    public CustomerResponse addCustomer(@RequestBody CustomerRequest customerRequest) {
+    public CustomerResponse addCustomer(@RequestBody CustomerRequest customerRequest)
+    {
         return customerService.addCustomer(customerRequest);
     }
 
     @GetMapping("/get-customer/{id}")
-    public CustomerResponse getCustomer(@PathVariable Long id) {
+    public CustomerResponse getCustomer(@PathVariable Long id)
+    {
         return customerService.getStudent(id);
     }
 }

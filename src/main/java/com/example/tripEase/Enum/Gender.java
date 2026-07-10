@@ -5,8 +5,8 @@ package com.example.tripEase.Enum;
  Created on: 05-07-2026 03:35
  Project Name: tripEase enum for gender
  /**********************************************/
-public enum Gender {
-
+public enum Gender
+{
     MALE,
 
     FEMALE,
