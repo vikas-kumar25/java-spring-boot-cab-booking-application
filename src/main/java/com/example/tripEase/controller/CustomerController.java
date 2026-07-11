@@ -3,7 +3,6 @@ package com.example.tripEase.controller;
 import com.example.tripEase.Enum.Gender;
 import com.example.tripEase.dtos.request.CustomerRequest;
 import com.example.tripEase.dtos.response.CustomerResponse;
-import com.example.tripEase.model.Customer;
 import com.example.tripEase.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +30,6 @@ public class CustomerController
     @GetMapping("/get-customer/{id}")
     public CustomerResponse getCustomer(@PathVariable Long id)
     {
-
         return customerService.getStudent(id);
     }
 
@@ -41,9 +39,18 @@ public class CustomerController
         return customerService.getAllByGender(gender);
     }
 
+    //Get All customer by Gender and Age
     @GetMapping("/get/filter")
     public List<CustomerResponse> getAllByGenderAndAge(@RequestParam Gender gender, int age)
     {
         return customerService.getAllByGenderAndAge(gender, age);
     }
+
+    //Get all customer by gender and age greater than
+    @GetMapping("/gender-age-greater-than")
+    public List<CustomerResponse> getAllByGenderAndAgeGreaterThan(@RequestParam Gender gender, int age)
+    {
+        return customerService.getAllByGenderAndAgeGreaterThan(gender, age);
+    }
+
 }

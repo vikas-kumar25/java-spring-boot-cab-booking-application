@@ -82,4 +82,17 @@ public class CustomerService
         }
         return responseCustomers;
     }
+
+    public List<CustomerResponse> getAllByGenderAndAgeGreaterThan(Gender gender, int age)
+    {
+        List<Customer> savedCustomers = customerRepository.findByGenderAndAgeGreaterThan(gender, age);
+
+        List<CustomerResponse> responseCustomers = new ArrayList<>();
+
+        for (Customer customer : savedCustomers)
+        {
+            responseCustomers.add(CustomerTransformer.CustomerToCustomerResponse(customer));
+        }
+        return responseCustomers;
+    }
 }

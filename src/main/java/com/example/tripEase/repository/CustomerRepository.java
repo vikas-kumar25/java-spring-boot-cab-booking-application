@@ -3,6 +3,9 @@ package com.example.tripEase.repository;
 import com.example.tripEase.Enum.Gender;
 import com.example.tripEase.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.JpqlQueryBuilder;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,4 +21,9 @@ public interface CustomerRepository extends JpaRepository<Customer, Long>
     List<Customer> findByGender(Gender gender);
 
     List<Customer> findByGenderAndAge(Gender gender, int age);
+
+    @Query("select c from Customer c where c.gender = :gender and c.age > :age")
+    List<Customer> findByGenderAndAgeGreaterThan(
+            @Param("gender") Gender gender,
+            @Param("age") int age);
 }
