@@ -1,6 +1,7 @@
 package com.example.tripEase.dtos.response;
 
 import com.example.tripEase.Enum.Gender;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
+@Builder
 public class CustomerResponse
 {
     private Long customerId;

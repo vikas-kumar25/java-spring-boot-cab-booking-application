@@ -14,25 +14,25 @@ public class CustomerTransformer
     //RequestDto --convert to--> entity
     public static Customer CustomerRequestToCustomer(CustomerRequest customerRequest)
     {
-        Customer customer = new Customer();
+        Customer customer = Customer.builder()
+                .age(customerRequest.getAge())
+                .name(customerRequest.getName())
+                .email(customerRequest.getEmail())
+                .gender(customerRequest.getGender())
+                .build();
 
-        customer.setAge(customerRequest.getAge());
-        customer.setName(customerRequest.getName());
-        customer.setEmail(customerRequest.getEmail());
-        customer.setGender(customerRequest.getGender());
         return customer;
     }
 
     //saved entity --Convert to--> ResponseDto
     public static CustomerResponse CustomerToCustomerResponse(Customer savedCustomer)
     {
-        CustomerResponse customerResponse = new CustomerResponse();
-
-        customerResponse.setCustomerId(savedCustomer.getCustomerId());
-        customerResponse.setName(savedCustomer.getName());
-        customerResponse.setAge(savedCustomer.getAge());
-        customerResponse.setEmail(savedCustomer.getEmail());
-        customerResponse.setGender(savedCustomer.getGender());
-        return customerResponse;
+        return CustomerResponse.builder()
+                .customerId(savedCustomer.getCustomerId())
+                .name(savedCustomer.getName())
+                .age(savedCustomer.getAge())
+                .email(savedCustomer.getEmail())
+                .gender(savedCustomer.getGender())
+                .build();
     }
 }
