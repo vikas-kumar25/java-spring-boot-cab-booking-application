@@ -24,13 +24,18 @@ public class Driver
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cab_id")
     Cab cab;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long driverId;
+
     private String name;
+
     private int age;
-    @Column(name = "email_id")
-    private String email;
+
+    @Column(unique = true, nullable = false)
+    private String emailId;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "driver_id")
     private List<Booking> bookings = new ArrayList<>();

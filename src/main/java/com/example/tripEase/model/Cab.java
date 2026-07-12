@@ -24,6 +24,7 @@ public class Cab
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cabId;
 
+    @Column(unique = true, nullable = false)
     private String cabNumber;
 
     private String cabModel;

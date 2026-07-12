@@ -16,7 +16,7 @@ public class DriverTransformer
         return Driver.builder()
                 .name(driverRequest.getName())
                 .age(driverRequest.getAge())
-                .email(driverRequest.getEmail())
+                .emailId(driverRequest.getEmailId())
                 .build();
     }
 
@@ -26,7 +26,7 @@ public class DriverTransformer
                 .driverId(savedDriver.getDriverId())
                 .name(savedDriver.getName())
                 .age(savedDriver.getAge())
-                .email(savedDriver.getEmail())
+                .emailId(savedDriver.getEmailId())
                 .build();
     }
 }

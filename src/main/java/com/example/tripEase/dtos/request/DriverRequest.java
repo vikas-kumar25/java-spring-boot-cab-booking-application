@@ -1,6 +1,5 @@
 package com.example.tripEase.dtos.request;
 
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +16,6 @@ public class DriverRequest
 
     private int age;
 
-    private String email;
+    private String emailId;
 
 }

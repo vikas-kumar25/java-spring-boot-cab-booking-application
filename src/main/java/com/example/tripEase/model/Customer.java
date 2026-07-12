@@ -30,8 +30,8 @@ public class Customer
 
     private int age;
 
-    @Column(name = "email_id")
-    private String email;
+    @Column(unique = true, nullable = false)
+    private String emailId;
 
     @Enumerated(value = EnumType.STRING)
     private Gender gender;

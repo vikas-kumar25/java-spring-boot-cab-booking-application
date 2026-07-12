@@ -23,7 +23,7 @@ public class CustomerResponse
 
     private int age;
 
-    private String email;
+    private String emailId;
 
     private Gender gender;
 }

@@ -36,9 +36,13 @@ public class Booking
     private int bookingId;
 
     private String pickup;
+
     private String destination;
+
     private int tripDistanceInKm;
+
     private TripStatus tripStatus;
+
     private Double billAmount;
 
 }

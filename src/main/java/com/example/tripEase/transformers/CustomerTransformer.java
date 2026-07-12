@@ -17,7 +17,7 @@ public class CustomerTransformer
         Customer customer = Customer.builder()
                 .age(customerRequest.getAge())
                 .name(customerRequest.getName())
-                .email(customerRequest.getEmail())
+                .emailId(customerRequest.getEmailId())
                 .gender(customerRequest.getGender())
                 .build();
 
@@ -31,7 +31,7 @@ public class CustomerTransformer
                 .customerId(savedCustomer.getCustomerId())
                 .name(savedCustomer.getName())
                 .age(savedCustomer.getAge())
-                .email(savedCustomer.getEmail())
+                .emailId(savedCustomer.getEmailId())
                 .gender(savedCustomer.getGender())
                 .build();
     }
