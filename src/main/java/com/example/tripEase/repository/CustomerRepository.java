@@ -22,8 +22,15 @@ public interface CustomerRepository extends JpaRepository<Customer, Long>
 
     List<Customer> findByGenderAndAge(Gender gender, int age);
 
+    //HQL Queries - Hibernate
     @Query("select c from Customer c where c.gender = :gender and c.age > :age")
     List<Customer> findByGenderAndAgeGreaterThan(
             @Param("gender") Gender gender,
             @Param("age") int age);
+
+    //SQL Queries
+//    @Query(value = "select * from customer_information where gender = :gender and age > :age", nativeQuery = true)
+//    List<Customer> findByGenderAndAgeGreaterThan(
+//            @Param("gender") String gender,
+//            @Param("age") int age);
 }

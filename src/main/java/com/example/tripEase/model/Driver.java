@@ -1,10 +1,7 @@
 package com.example.tripEase.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +18,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "driver_information")
+@Builder
 public class Driver
 {
     @OneToOne(cascade = CascadeType.ALL)
@@ -28,7 +26,7 @@ public class Driver
     Cab cab;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int driverId;
+    private Long driverId;
     private String name;
     private int age;
     @Column(name = "email_id")

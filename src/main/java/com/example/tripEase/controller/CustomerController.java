@@ -30,7 +30,7 @@ public class CustomerController
     @GetMapping("/get-customer/{id}")
     public CustomerResponse getCustomer(@PathVariable Long id)
     {
-        return customerService.getStudent(id);
+        return customerService.getCustomer(id);
     }
 
     @GetMapping("/get/gender/{gender}")
@@ -46,11 +46,12 @@ public class CustomerController
         return customerService.getAllByGenderAndAge(gender, age);
     }
 
-    //Get all customer by gender and age greater than
+    //Get all customer with gender and age greater than
     @GetMapping("/gender-age-greater-than")
     public List<CustomerResponse> getAllByGenderAndAgeGreaterThan(@RequestParam Gender gender, int age)
     {
         return customerService.getAllByGenderAndAgeGreaterThan(gender, age);
     }
+
 
 }

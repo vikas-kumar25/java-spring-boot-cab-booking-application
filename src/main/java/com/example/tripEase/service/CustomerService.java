@@ -40,7 +40,8 @@ public class CustomerService
         return customerResponse;
     }
 
-    public CustomerResponse getStudent(Long id)
+
+    public CustomerResponse getCustomer(Long id)
     {
         Optional<Customer> optionalCustomer = customerRepository.findById(id);
 
@@ -57,6 +58,7 @@ public class CustomerService
         return customerResponse;
     }
 
+
     public List<CustomerResponse> getAllByGender(Gender gender)
     {
         List<Customer> savedCustomer = customerRepository.findByGender(gender);
@@ -70,6 +72,7 @@ public class CustomerService
         return customerResponse;
     }
 
+
     public List<CustomerResponse> getAllByGenderAndAge(Gender gender, int age)
     {
         List<Customer> savedCustomers = customerRepository.findByGenderAndAge(gender, age);
@@ -82,6 +85,7 @@ public class CustomerService
         }
         return responseCustomers;
     }
+
 
     public List<CustomerResponse> getAllByGenderAndAgeGreaterThan(Gender gender, int age)
     {
