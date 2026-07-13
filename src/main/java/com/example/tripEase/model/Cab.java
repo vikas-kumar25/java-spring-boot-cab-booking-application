@@ -1,10 +1,7 @@
 package com.example.tripEase.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 /**********************************************
  Developer Name: Vikas
@@ -16,13 +13,14 @@ import lombok.Setter;
 @Getter
 @Setter
 
+@Builder
 @Entity
 @Table(name = "cab_information")
 public class Cab
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cabId;
+    private Long cabId;
 
     @Column(unique = true, nullable = false)
     private String cabNumber;
