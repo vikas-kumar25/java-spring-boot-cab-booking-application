@@ -1,8 +1,11 @@
-package com.example.tripEase.model;
+package com.example.tripEase.dtos.response;
 
 import com.example.tripEase.Enum.TripStatus;
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -10,27 +13,18 @@ import java.util.Date;
 
 /**********************************************
  Developer Name: Vikas
- Created on: 05-07-2026 06:02
+ Created on: 14-07-2026 01:29
  Project Name: tripEase ${
  /**********************************************/
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-
-@Builder
-@Entity
-@Table(name = "booking_information")
-public class Booking
+public class BookingResponse
 {
-    @CreationTimestamp
+
     Date bookedAt;
 
-    @UpdateTimestamp
     Date lastUpdateAt;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookingId;
 
     private String pickup;
@@ -42,5 +36,9 @@ public class Booking
     private TripStatus tripStatus;
 
     private Double billAmount;
+
+    private CustomerResponse customerResponse;
+
+    private CabResponse cabResponse;
 
 }
