@@ -25,7 +25,7 @@ import static com.example.tripEase.transformers.DriverTransformer.driverToDriver
 public class DriverService
 {
     @Autowired
-    DriverRepository driverRepository;
+    private DriverRepository driverRepository;
 
     public DriverResponse addDriver(DriverRequest driverRequest)
     {
@@ -55,6 +55,7 @@ public class DriverService
         return driverResponse;
     }
 
+
     //get all driver
     public List<DriverResponse> getAllDrivers()
     {
@@ -68,4 +69,5 @@ public class DriverService
         }
         return driverResponses;
     }
+
 }

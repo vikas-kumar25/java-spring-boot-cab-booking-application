@@ -49,6 +49,6 @@ public class CabService
         CabResponse cabResponse = CabTransformer.cabToCabResponse(savedDriver.getCab(), savedDriver);
 
         return cabResponse;
-
     }
+
 }

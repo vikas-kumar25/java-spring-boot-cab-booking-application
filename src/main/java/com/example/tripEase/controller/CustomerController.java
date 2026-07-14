@@ -53,5 +53,4 @@ public class CustomerController
         return customerService.getAllByGenderAndAgeGreaterThan(gender, age);
     }
 
-
 }

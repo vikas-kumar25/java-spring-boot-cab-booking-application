@@ -39,6 +39,7 @@ public class Booking
 
     private int tripDistanceInKm;
 
+    @Enumerated(EnumType.STRING)
     private TripStatus tripStatus;
 
     private Double billAmount;

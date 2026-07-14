@@ -4,6 +4,7 @@ import com.example.tripEase.Enum.TripStatus;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -18,6 +19,7 @@ import java.util.Date;
  /**********************************************/
 @Getter
 @Setter
+@Builder
 public class BookingResponse
 {
 

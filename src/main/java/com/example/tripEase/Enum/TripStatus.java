@@ -7,7 +7,9 @@ package com.example.tripEase.Enum;
  /**********************************************/
 public enum TripStatus
 {
-    booked,
-    ongoing,
+    IN_Process,
+
+    BOOKED,
+
     completed;
 }

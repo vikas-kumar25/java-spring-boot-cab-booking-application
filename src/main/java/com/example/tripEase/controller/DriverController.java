@@ -19,7 +19,7 @@ import java.util.List;
 public class DriverController
 {
     @Autowired
-    DriverService driverService;
+    private DriverService driverService;
 
     @PostMapping("/add")
     public DriverResponse addDriver(@RequestBody DriverRequest driverRequest)
