@@ -18,7 +18,7 @@ public class BookingController
     @Autowired
     private BookingService bookingService;
 
-    @PostMapping("/book/customerId/{customerId}")
+    @PostMapping("/book/customer/{customerId}")
     public BookingResponse bookCab(@RequestBody BookingRequest bookingRequest, @PathVariable("customerId") Long customerId)
     {
         return bookingService.bookCab(bookingRequest, customerId);

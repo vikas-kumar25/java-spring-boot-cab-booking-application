@@ -14,6 +14,8 @@ import com.example.tripEase.repository.CustomerRepository;
 import com.example.tripEase.repository.DriverRepository;
 import com.example.tripEase.transformers.BookingTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -37,6 +39,9 @@ public class BookingService
 
     @Autowired
     private BookingRepository bookingRepository;
+
+    @Autowired
+    JavaMailSender javaMailSender;
 
     public BookingResponse bookCab(BookingRequest bookingRequest, Long customerId)
     {
@@ -71,7 +76,26 @@ public class BookingService
         Customer savedCustomer = customerRepository.save(customer);
         Driver savedDrier = driverRepository.save(driver);
 
+        //sending cab booked mail to customer
+        sendEmail(savedCustomer, availableCab);
+
         //Booking to bookingResponse
         return BookingTransformer.bookingToBookingResponse(savedBooking, savedCustomer, savedDrier, availableCab);
+    }
+
+    private void sendEmail(Customer savedCustomer, Cab availableCab)
+    {
+        SimpleMailMessage message = new SimpleMailMessage();
+
+        String text = "Congratulations!! "+savedCustomer.getName()+". Your Cab has been booked."
+                +"\n Cab Number is: "+ availableCab.getCabNumber()+ "\n Cab Model: "+availableCab.getCabModel();
+
+        message.setFrom("25vk04@gmail.com");
+        message.setTo(savedCustomer.getEmailId());
+        message.setSubject("Cab Booked");
+        message.setText(text);
+
+        // This line pushes the email to the SMTP server
+        javaMailSender.send(message);
     }
 }
